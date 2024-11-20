@@ -40,6 +40,10 @@ dependencies {
 	testImplementation 'org.springframework.security:spring-security-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 
+	//mapper
+	implementation 'org.mapstruct:mapstruct:1.5.3.Final'   // Dependência do MapStruct
+	annotationProcessor 'org.mapstruct:mapstruct-processor:1.5.3.Final' // Processador de anotações
+
 }
 
 tasks.named('test') {
