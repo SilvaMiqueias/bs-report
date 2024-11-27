@@ -1,7 +1,10 @@
 package com.example.report.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
+
+import java.util.List;
 
 @Getter
 @Setter
@@ -21,5 +24,9 @@ public class Category {
 
     @Column(name = "description")
     private String description;
+
+    @JsonIgnore
+    @ManyToMany(mappedBy = "categories")
+    private List<Book> books;
 
 }
