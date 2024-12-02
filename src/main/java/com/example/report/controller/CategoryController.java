@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @Controller
-@RequestMapping("/report/category")
+@RequestMapping("/report/auth/category")
 public class CategoryController {
 
     @Autowired

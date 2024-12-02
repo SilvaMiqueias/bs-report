@@ -7,6 +7,7 @@ import com.example.report.mapper.BookMapper;
 import com.example.report.mapper.CategoryMapper;
 import com.example.report.model.Book;
 import com.example.report.repository.BookRepository;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -72,6 +73,12 @@ public class BookService {
             base64Data = base64String.replace("data:image/png;base64,", "");
         }
         return Base64.getDecoder().decode(base64Data);
+    }
+
+
+    @Transactional
+    public void CreateTest(){
+        repository.findBookLock(1l);
     }
 
 
