@@ -38,7 +38,7 @@ public class UserAuthenticationFilter extends OncePerRequestFilter {
                 Authentication authentication = new UsernamePasswordAuthenticationToken(userDetailsImp.getUsername(), null, userDetailsImp.getAuthorities());
                 SecurityContextHolder.getContext().setAuthentication(authentication);
             }else{
-                throw new RuntimeException("O token está ausente");
+//                throw new RuntimeException("O token está ausente");
             }
 
         filterChain.doFilter(request, response);
