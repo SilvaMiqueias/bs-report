@@ -9,6 +9,17 @@ jobs:
   tests:
     runs-on: ubuntu-latest
 
+
+    services:
+      postgres:
+        image: postgres:latest
+        ports:
+          - 5432:5432
+        env:
+          POSTGRES_DB: report
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: admin123
+
     steps:
       - uses: actions/checkout@v3
       - name: Set up JDK 17
