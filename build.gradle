@@ -62,9 +62,11 @@ tasks.named('test') {
 }
 
 jacocoTestReport {
-	dependsOn test // Garante que os testes serão executados antes de gerar o relatório
+	dependsOn test
 	reports {
-		xml.required = true
+		xml.required = false
+		csv.required = true
 		html.required = true
+		csv.outputLocation = file("${buildDir}/reports/jacoco/test/jacocoTestReport.csv")
 	}
 }
